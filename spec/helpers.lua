@@ -220,8 +220,8 @@ local function wait_until(f, timeout)
 
 print("tstart: ", tstart)
   repeat
-    ngx.sleep(0.2)
     ok, res, err = pcall(f)
+    ngx.sleep(0.05)
 print("wait until: ", tostring(ok), " / ", tostring(res), " / ", tostring(err))
   until not ok or res or ngx.time() >= texp
 
